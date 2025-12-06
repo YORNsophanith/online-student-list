@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>http:/studentform.com.kh</title>
+  <link rel="icon" type="image/png" href="/Image/AEU_logo.jpg" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,khmer OS System;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    header img {
+      height: 169px;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 28px;
+      color: #f0e10e;
+    }
+
+    header h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #eb2604;
+
+    }
+
+    nav {
+      background-color: #2f32e0;
+      border-bottom: 5px solid #eb2604;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      position: relative;
+      margin: 0;
+      z-index: 1;
+    }
+
+    nav ul li a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgb(116, 152, 219);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #000c74;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+      background-color: #fdfdfd;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover { 
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .output {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #e9ecef;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #dee2e6;
+      font-weight: 600;
+    }
+
+    .cta-button {
+      display: block;
+      width: 95%;
+      height: auto;
+      text-align: center;
+      border-radius: 4px;
+      background-color: #f44336;
+      color: white;
+      padding: 8px 15px;
+      margin-top: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cta-button:hover {
+      background-color: rgb(228, 96, 96);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #8a8989;
+    }
+
+    .dark-mode .container {
+      background-color: #1b1b1b;
+    }
+
+    .dark-mode input,
+    .dark-mode button {
+      background-color: #0e0d0d;
+      color: #8a8989;
+      border-color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+        margin: 10px;
+      }
+      .cta-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Image/logo.jpg" alt="AEU Logo" />
+    <h1>ASIA EURO UNIVERSITY</h1>
+    <h2>Faculty of Science and Technology</h2>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="https://www.aeu.edu.kh/kh/faculty/faculty-of-science-and-technology">About</a></li>
+        <li><a href="http://127.0.0.1:5500/Profile/index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div style="text-align:right; margin-bottom:10px;">
+      <label for="languageToggle">Language:</label>
+      <select id="languageToggle" onchange="switchLanguage()">
+        <option value="en">English</option>
+        <option value="km">ភាសាខ្មែរ</option>
+      </select>
+    </div>
+
+    <progress id="formProgress" value="0" max="100" style="width:100%; margin-bottom:10px;"></progress>
+
+    <h2>Student Form</h2>
+    <form id="inputForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" required />
+      </div>
+      <div>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required />
+      </div>
+      <div class="form-group">
+        <label for="major">Major:</label>
+        <input type="text" id="major" name="major" required />
+      </div>
+      <div class="form-group">
+        <label for="Group">Group:</label>
+        <input type="text" id="Group" name="Group" required />
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dob" required />
+      </div>
+      <div class="form-group">
+        <label for="batch">Batch:</label>
+        <input type="number" id="batch" name="batch" required />
+      </div>
+      <div class="form-group">
+        <label for="shift">Shift:</label>
+        <input type="text" id="shift" name="shift" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="output" id="output">
+      <p>Submit the form to see the results here.</p>
+    </div>
+
+    <button onclick="downloadData()" style="margin-top:10px;">Download Data</button>
+    <button onclick="toggleTheme()" style="margin-top:10px;">Toggle Theme</button>
+    <a href="https://elearning.aeu.cloud/kh" class="cta-button">E-Learning Portal</a>
+  </div>
+
+  <footer>
+    &copy; NITH, 2025 Student Management System. All rights reserved.
+  </footer>
+
+  <script>
+  const formFields = ['name', 'id', 'gender','dob', 'major', 'Group', 'batch', 'shift'];
+
+  const translations = {
+    en: {
+      name: "Name", id: "ID", major: "Major", Group: "Group",
+      batch: "Batch", shift: "Shift", submit: "Submit",
+      studentform: "Student Form", download: "Download Data", dob: "Date of Birth",
+      theme: "Toggle Theme", portal: "E-Learning Portal", clear: "Clear Form"
+    },
+    km: {
+      name: "ឈ្មោះ", id: "លេខសម្គាល់", major: "ជំនាញ", Group: "ក្រុម",
+      batch: "ជំនាន់", shift: "វេន", submit: "បញ្ជូន",gender: "ភេទ",dob: "ថ្ងៃខែឆ្នាំកំណើត",
+      studentform: "បែបបទនិស្សិត", download: "ទាញយកទិន្នន័យ",
+      theme: "ប្ដូរទម្រង់", portal: "ប្រព័ន្ធសិក្សាអេឡិចត្រូនិក", clear: "សម្អាតបែបបទ"
+    }
+  };
+
+  function getFormData() {
+    const data = {};
+    formFields.forEach(id => {
+      data[id] = document.getElementById(id).value;
+    });
+    return data;
+  }
+
+  function renderTable(data) {
+    const outputDiv = document.getElementById('output');
+    if (!document.getElementById('dataTable')) {
+      outputDiv.innerHTML = `
+        <h3>Form Data</h3>
+        <table id="dataTable">
+          <thead><tr><th>Field</th><th>Value</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      `;
+    }
+    const tableBody = document.querySelector('#dataTable tbody');
+    for (const key in data) {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td>${key}</td><td>${data[key]}</td>`;
+      tableBody.appendChild(row);
+    }
+  }
+  function renderTable(data) {
+  const outputDiv = document.getElementById('output');
+  if (!document.getElementById('dataTable')) {
+    outputDiv.innerHTML = `
+      <h3>Form Data</h3>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Major</th>
+            <th>Batch</th>
+            <th>Shift</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    `;
+  }
+  const tableBody = document.querySelector('#dataTable tbody');
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td>${data.id}</td>
+    <td>${data.name}</td>
+    <td>${data.gender}</td>
+    <td>${data.dob}</td>
+    <td>${data.major}</td>
+    <td>${data.batch}</td>
+    <td>${data.shift}</td>
+  `;
+  tableBody.appendChild(row);
+}
+
+  function updateProgress() {
+    const filled = formFields.filter(id => document.getElementById(id).value.trim()).length;
+    document.getElementById('formProgress').value = (filled / formFields.length) * 100;
+  }
+
+  function switchLanguage() {
+    const lang = document.getElementById('languageToggle').value;
+    const t = translations[lang];
+    document.querySelector('h2').textContent = t.formTitle;
+    formFields.forEach(id => {
+      document.querySelector(`label[for="${id}"]`).textContent = t[id];
+    });
+    document.querySelector('button[type="submit"]').textContent = t.submit;
+    document.getElementById('downloadBtn').textContent = t.download;
+    document.getElementById('themeBtn').textContent = t.theme;
+    document.getElementById('clearBtn').textContent = t.clear;
+    document.querySelector('.cta-button').textContent = t.portal;
+  }
+
+  function downloadData() {
+    const table = document.getElementById('dataTable');
+    if (!table) {
+      alert('No data available for download.');
+      return;
+    }
+
+    let csv = '';
+    const rows = table.querySelectorAll('tr');
+    rows.forEach(row => {
+      const cols = row.querySelectorAll('td, th');
+      const rowData = Array.from(cols).map(col => col.innerText).join(',');
+      csv += rowData + '\n';
+    });
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'form-data.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  function resetForm() {
+    document.getElementById('inputForm').reset();
+    localStorage.removeItem('formData');
+    document.getElementById('formProgress').value = 0;
+  }
+
+  document.getElementById('inputForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const data = getFormData();
+    if (Object.values(data).every(val => val.trim() !== '')) {
+      renderTable(data);
+      document.getElementById('output').style.display = 'block';
+      resetForm();
+    }
+  });
+
+  document.getElementById('inputForm').addEventListener('input', () => {
+    updateProgress();
+    const data = getFormData();
+    localStorage.setItem('formData', JSON.stringify(data));
+  });
+
+  window.onload = () => {
+    const saved = JSON.parse(localStorage.getItem('formData'));
+    if (saved) {
+      formFields.forEach(id => {
+        if (saved[id]) document.getElementById(id).value = saved[id];
+      });
+      updateProgress();
+    }
+  };
+</script>
+</body>
+</html>
